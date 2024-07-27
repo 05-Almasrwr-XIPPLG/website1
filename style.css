@@ -1,0 +1,830 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Courier New', Courier, monospace;
+    top: 0;
+    overflow-x: hidden;
+}
+
+@keyframes gelembung {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+@keyframes color {
+    0% {
+        color: red;
+    }
+    25% {
+        color: green;
+    }
+    50%{
+        color: blue;
+    }
+    100%{
+        color: red;
+    }
+}
+
+.container{
+    border-bottom: 1px solid black;
+    background: rgba(255, 255, 255, 0.349);
+    padding: 10px;
+    color: rgb(255, 56, 56);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 999999;
+    backdrop-filter: blur(10px);
+}
+
+.logo{
+    font-size: 30px;
+    font-weight: 800;
+    text-shadow: 2px 2px 8px black;
+    animation: gelembung ease-in-out infinite 4000ms;
+}
+
+nav a{
+    margin: 10px;
+    text-decoration: none;
+    color: brown;
+    font-size: 16px;
+    display: inline-block;
+}
+
+nav a::after{
+    content: '';
+    display: block;
+    border-bottom: 2px solid black;
+    transform: scaleX(0);
+    transition: .2s linear;
+}
+
+nav a:hover::after{
+    transform: scaleX(1);
+}
+
+span{
+    background: rgb(158, 158, 255);
+    padding: 4px 20px;
+    border-radius: 10px;
+}
+
+span:hover{
+    background: rgb(109, 109, 206);
+}
+
+.hero{
+    display: flex;
+    justify-content: space-around;
+    background-image: url(home.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    align-items: center;
+}
+
+.hero::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    bottom: 0;
+}
+
+.hero-kiri{
+    line-height: 0.90;
+    max-width: 450px;
+}
+
+.hero-kiri h1{
+    font-size: 30px;
+    font-weight: bold;
+    animation: color infinite 6s;
+}
+
+.hero .image{
+    display: flex;
+    margin-bottom: 40px;
+    margin-top: 30px;
+}
+
+.hero .image .images1{
+    box-sizing: border-box;
+    background-color: red;
+    padding: 80px 60px;
+    background-image: url(ghome1.jpg);
+    background-size: cover;
+    margin-right: 40px;
+    box-shadow: 3px 3px 8px black;
+    transition: .3s;
+}
+
+.hero .image .images2{
+    box-sizing: border-box;
+    background-color: red;
+    padding: 80px 60px;
+    background-image: url(ghome2.webp);
+    background-size: cover;
+    margin-right: 40px;
+    box-shadow: 3px 3px 8px black;
+    transition: .3s;
+}
+
+.hero .image .images3{
+    box-sizing: border-box;
+    background-color: red;
+    padding: 80px 60px;
+    background-image: url(ghome3.jpg);
+    background-size: cover;
+    margin-right: 40px;
+    box-shadow: 3px 3px 8px black;
+    transition: .3s;
+}
+
+.images1:hover,
+.images2:hover,
+.images3:hover{
+    transform: translateY(-10px);
+    filter: brightness(50%);
+}
+
+.hero-kanan{
+    transition: .4s;
+}
+
+.hero-kanan:hover{
+    transform: rotate(740deg);
+    filter: brightness(10%);
+}
+
+.info{
+    font-size: 15px;
+    line-height: 1;
+    width: 100%;
+    text-align: center;
+    padding: 4px;
+    background: rgb(203, 203, 255);
+}
+
+.isi{
+    line-height: 1.6;
+    padding: 100px;
+    background: rgb(235, 235, 255);
+}
+
+.awal p{
+    margin-left: 5px;
+}
+
+.awal h1{
+    margin-left: 5px;
+    font-size: 20px;
+}
+
+.pilih{
+    display: flex;
+}
+
+.pilihan-awal a{
+    text-decoration: none;
+    margin: 5px;
+    color: black;
+    border-radius: 20px;
+    padding: 2px 10px;
+    border: 1px solid black;
+}
+
+.pilihan a{
+    text-decoration: none;
+    color: black;
+    border-radius: 20px;
+    border: 1px solid black;
+    background: rgb(126, 126, 226);
+    padding: 2px 10px;
+}
+
+.pilihan a:hover{
+    background: transparent;
+}
+
+.pilihan-awal a:hover{
+    background: rgb(126, 126, 226);
+}
+
+.gambar{
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+/* hotel */
+.kotak-hotel{
+    cursor: pointer;
+    position: relative;
+    padding: 130px  110px;
+    margin-right: 40px;
+    margin-top: 10px;
+    background: white;
+    background-image: url(hotelbintang5.jpg);
+    background-size: cover;
+    box-sizing: border-box;
+    transition: .3s;
+    line-height: 2;
+}
+
+.kotak-hotel:hover{
+    transform: translateY(-5px);
+}
+
+.kotak-hotel a {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 3px;
+    background: linear-gradient(to top, black, transparent);
+    color: white;
+    opacity: 0;
+}
+
+.kotak-hotel .title h2{
+    position: absolute;
+    width: 80%;
+    box-sizing: border-box;
+    padding: 20px 3px;
+    background: linear-gradient(to up, black, transparent);
+    color: white;
+    opacity: 0;
+    font-size: 12px;
+    left: 20px;
+}
+
+.kotak-hotel .keterangan-tempat{
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.kotak-hotel .keterangan-tempat p{
+    position: absolute;
+    width: 80%;
+    box-sizing: border-box;
+    padding: 20px 3px;
+    background: linear-gradient(to up, black, transparent);
+    color: white;
+    opacity: 0;
+    left: 20px;
+}
+
+.kotak-hotel .ratting p{
+    position: absolute;
+    width: 80%;
+    box-sizing: border-box;
+    padding: 20px 3px;
+    background: linear-gradient(to up, black, transparent);
+    color: white;
+    opacity: 0;
+    font-size: 12px;
+    left: 20px;
+} 
+
+.kotak-hotel .ratting{
+    margin-top: 40px;
+    margin-right: 30px;
+}
+
+.kotak-hotel:hover a{
+    opacity: 100;
+    text-decoration: none;
+    color: white;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+}
+
+.kotak-hotel:hover h2,
+.kotak-hotel:hover p{
+    opacity: 100%;
+    text-shadow: 5px 5px 8px black;
+    font-weight: 900;
+    z-index: 99999999;
+}
+
+
+/* wahana */
+.kotak-wahana{
+    cursor: pointer;
+    position: relative;
+    padding: 130px  110px;
+    margin-right: 40px;
+    margin-top: 10px;
+    background: white;
+    background-image: url(jawatimur.jpg);
+    background-size: cover;
+    box-sizing: border-box;
+    transition: .3s;
+    line-height: 2;
+}
+
+.kotak-wahana:hover{
+    transform: translateY(-5px);
+}
+
+.kotak-wahana a {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 3px;
+    background: linear-gradient(to top, black, transparent);
+    color: white;
+    opacity: 0;
+}
+
+.kotak-wahana .title h2{
+    position: absolute;
+    width: 80%;
+    box-sizing: border-box;
+    padding: 20px 3px;
+    background: linear-gradient(to up, black, transparent);
+    color: white;
+    opacity: 0;
+    font-size: 12px;
+    left: 20px;
+}
+
+.kotak-wahana .keterangan-tempat{
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.kotak-wahana .keterangan-tempat p{
+    position: absolute;
+    width: 80%;
+    box-sizing: border-box;
+    padding: 20px 3px;
+    background: linear-gradient(to up, black, transparent);
+    color: white;
+    opacity: 0;
+    left: 20px;
+}
+
+.kotak-wahana .ratting p{
+    position: absolute;
+    width: 80%;
+    box-sizing: border-box;
+    padding: 20px 3px;
+    background: linear-gradient(to up, black, transparent);
+    color: white;
+    opacity: 0;
+    font-size: 12px;
+    left: 20px;
+} 
+
+.kotak-wahana .ratting{
+    margin-top: 40px;
+    margin-right: 30px;
+}
+
+.kotak-wahana:hover a{
+    opacity: 100;
+    text-decoration: none;
+    color: white;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+}
+
+.kotak-wahana:hover h2,
+.kotak-wahana:hover p{
+    opacity: 100%;
+    text-shadow: 5px 5px 8px black;
+    font-weight: 900;
+}
+
+
+/* pegunungan */
+.kotak-pegunungan{
+    cursor: pointer;
+    position: relative;
+    padding: 130px  110px;
+    margin-right: 40px;
+    margin-top: 10px;
+    background: white;
+    background-image: url(pemandangan2.jpg);
+    background-size: cover;
+    box-sizing: border-box;
+    transition: .3s;
+    line-height: 2;
+}
+
+.kotak-pegunungan:hover{
+    transform: translateY(-5px);
+}
+
+.kotak-pegunungan a {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 3px;
+    background: linear-gradient(to top, black, transparent);
+    color: white;
+    opacity: 0;
+}
+
+.kotak-pegunungan .title h2{
+    position: absolute;
+    width: 80%;
+    box-sizing: border-box;
+    padding: 20px 3px;
+    background: linear-gradient(to up, black, transparent);
+    color: white;
+    opacity: 0;
+    font-size: 12px;
+    left: 20px;
+}
+
+.kotak-pegunungan .keterangan-tempat{
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.kotak-pegunungan .keterangan-tempat p{
+    position: absolute;
+    width: 80%;
+    box-sizing: border-box;
+    padding: 20px 3px;
+    background: linear-gradient(to up, black, transparent);
+    color: white;
+    opacity: 0;
+    left: 20px;
+}
+
+.kotak-pegunungan .ratting p{
+    position: absolute;
+    width: 80%;
+    box-sizing: border-box;
+    padding: 20px 3px;
+    background: linear-gradient(to up, black, transparent);
+    color: white;
+    opacity: 0;
+    font-size: 12px;
+    left: 20px;
+} 
+
+.kotak-pegunungan .ratting{
+    margin-top: 40px;
+    margin-right: 30px;
+}
+
+.kotak-pegunungan:hover a{
+    opacity: 100;
+    text-decoration: none;
+    color: white;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+}
+
+.kotak-pegunungan:hover h2,
+.kotak-pegunungan:hover p{
+    opacity: 100%;
+    text-shadow: 5px 5px 8px black;
+    font-weight: 900;
+}
+
+
+/* vila */
+.kotak-vila{
+    cursor: pointer;
+    position: relative;
+    padding: 130px  110px;
+    margin-right: 40px;
+    margin-top: 10px;
+    background: white;
+    background-image: url(vila\ modern.jpg);
+    background-size: cover;
+    box-sizing: border-box;
+    transition: .3s;
+    line-height: 2;
+}
+
+.kotak-vila:hover{
+    transform: translateY(-5px);
+}
+
+.kotak-vila a {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 3px;
+    background: linear-gradient(to top, black, transparent);
+    color: white;
+    opacity: 0;
+}
+
+.kotak-vila .title h2{
+    position: absolute;
+    width: 80%;
+    box-sizing: border-box;
+    padding: 20px 3px;
+    background: linear-gradient(to up, black, transparent);
+    color: white;
+    opacity: 0;
+    font-size: 12px;
+    left: 20px;
+}
+
+.kotak-vila .keterangan-tempat{
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.kotak-vila .keterangan-tempat p{
+    position: absolute;
+    width: 80%;
+    box-sizing: border-box;
+    padding: 20px 3px;
+    background: linear-gradient(to up, black, transparent);
+    color: white;
+    opacity: 0;
+    left: 20px;
+}
+
+.kotak-vila .ratting p{
+    position: absolute;
+    width: 80%;
+    box-sizing: border-box;
+    padding: 20px 3px;
+    background: linear-gradient(to up, black, transparent);
+    color: white;
+    opacity: 0;
+    font-size: 12px;
+    left: 20px;
+} 
+
+.kotak-vila .ratting{
+    margin-top: 40px;
+    margin-right: 30px;
+}
+
+.kotak-vila:hover a{
+    opacity: 100;
+    text-decoration: none;
+    color: white;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+}
+
+.kotak-vila:hover h2,
+.kotak-vila:hover p{
+    opacity: 100%;
+    text-shadow: 5px 5px 8px black;
+    font-weight: 900;
+}
+
+/* belum update!!!! */
+.kotak{
+    cursor: pointer;
+    position: relative;
+    padding: 130px  110px;
+    margin-right: 40px;
+    margin-top: 10px;
+    background: white;
+    background-image: url(home.png);
+    background-size: cover;
+    box-sizing: border-box;
+    transition: .3s;
+    line-height: 2;
+}
+
+.kotak:hover{
+    transform: translateY(-5px);
+}
+
+.kotak a {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 3px;
+    background: linear-gradient(to top, black, transparent);
+    color: white;
+    opacity: 0;
+}
+
+.kotak .title h2{
+    position: absolute;
+    width: 80%;
+    box-sizing: border-box;
+    padding: 20px 3px;
+    background: linear-gradient(to up, black, transparent);
+    color: white;
+    opacity: 0;
+    font-size: 12px;
+    left: 20px;
+}
+
+.kotak .keterangan-tempat{
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.kotak .keterangan-tempat p{
+    position: absolute;
+    width: 80%;
+    box-sizing: border-box;
+    padding: 20px 3px;
+    background: linear-gradient(to up, black, transparent);
+    color: white;
+    opacity: 0;
+    left: 20px;
+}
+
+.kotak .ratting p{
+    position: absolute;
+    width: 80%;
+    box-sizing: border-box;
+    padding: 20px 3px;
+    background: linear-gradient(to up, black, transparent);
+    color: white;
+    opacity: 0;
+    font-size: 12px;
+    left: 20px;
+} 
+
+.kotak.ratting{
+    margin-top: 40px;
+    margin-right: 30px;
+}
+
+.kotak:hover a{
+    opacity: 100;
+    text-decoration: none;
+    color: white;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+}
+
+.kotak:hover h2,
+.kotak:hover p{
+    opacity: 100%;
+    text-shadow: 5px 5px 8px black;
+    font-weight: 900;
+}
+
+
+
+/* informasi */
+.informasi{
+    padding: 100px;
+}
+
+.kanan-kiri{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.kiri-teks{
+    max-width: 40%;
+}
+
+/* comment */
+.publik{
+    padding: 10px 100px;
+    line-height: 3;
+    background-color: rgb(255, 231, 235);
+}
+
+.teks{
+    line-height: 2;
+}
+
+.nama textarea{
+    padding: 1px 1px;
+    width: 40%;
+    height: 30px;
+    box-sizing: border-box;
+}
+
+textarea {
+    width: 40%;
+    padding: 10px;
+    border: 1px solid #cfcfcf;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c2e0ff;
+}
+
+
+/* footer */
+.footer-dalam{
+    padding: 73px;
+    background: rgb(49, 47, 53);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-dalam h2{
+    animation: gelembung infinite ease-in-out 4000ms;
+    color: rgb(255, 56, 56);
+    text-shadow: 4px 4px 8px black;
+}
+
+.left{
+    margin-left: 60px;
+    display: flex;
+    line-height: 2.4;
+    flex-direction: column;
+}
+
+.left a{
+    text-decoration: none;
+    color: white;
+    border-bottom: 2px solid brown;
+}
+
+.conatct{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    line-height: 2.9;
+}
+
+.conatct a{
+    text-decoration: none;
+    color: white;
+}
+
+.conatct h2{
+    color: white;
+    border-bottom: 2px solid brown;
+    animation: color infinite 6s;
+    text-shadow: 4px 4px 8px black;
+}
+
+.cocial{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    line-height: 3;
+}
+
+.cocial a{
+    text-decoration: none;
+    color: white;
+}
+
+.cocial h2{
+    color: white;
+    border-bottom: 2px solid brown;
+    animation: color infinite 6s;
+    text-shadow: 4px 4px 8px black;
+}
+
+.cocial a:hover,
+.conatct a:hover,
+.left a:hover{
+    color: brown;
+}
